@@ -1,0 +1,10 @@
+endpoint: https://us1.prisma.sh/april-cound/database/dev
+
+datamodel: datamodel.graphql
+
+hooks:
+  post-deploy:
+    - graphql get-schema --project database
+
+# You can only access the API when providing JWTs that are signed with this secret
+secret: mysecret123
